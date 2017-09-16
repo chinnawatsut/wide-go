@@ -1,38 +1,43 @@
 package main
 
-import "fmt"
-
-type animal interface {
-	run()
-	eat()
-	walk()
+type Speeder interface {
+	Speed() int
 }
 
-type dog struct {
-	name string
+type Engine interface {
+	Speeder
+	Accel()
+	Decel()
 }
 
-func (d dog) run() {
-	fmt.Println("RUN")
-
+type engine struct {
+	speed int
 }
 
-func (d dog) eat() {
-	fmt.Println("EAT")
+func (e *engine) Speed() int {
+	return e.speed
 }
 
-func (d dog) walk() {
-	fmt.Println("WALK")
-
+func (e *engine) Accel() {
+	e.speed = e.speed + 10
 }
 
-func allTheyCanDo(a animal) {
-	a.eat()
-	a.run()
-	a.walk()
+func (e *engine) Decel() {
+	e.speed = e.speed - 10
+}
+
+func NewEngine() Engine {
+	return &engine{}
 }
 
 func main() {
-	rogers := dog{"roger"}
-	allTheyCanDo(rogers)
+
 }
+
+/*
+engine interface of Engine
+				and Engine interfaceof Speeder too.
+
+engine have 3 behaviours speed,accel,decel
+
+*/
