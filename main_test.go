@@ -33,8 +33,14 @@ func TestCaseModBy5(t *testing.T) {
 	}
 }
 
-func TestCase15(t *testing.T) {
-	errorExpeted(fizzbuzz(15), "fizzbuzz", t)
+func TestCaseModBy3and5(t *testing.T) {
+	testSuit := []int{15}
+	for _, v := range testSuit {
+		result := fizzbuzz(v)
+		expected := "fizzbuzz"
+
+		errorExpeted(result, expected, t)
+	}
 }
 
 func errorExpeted(result, expeted string, t *testing.T) {
