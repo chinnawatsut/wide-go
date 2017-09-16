@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -9,5 +10,5 @@ func main() {
 }
 
 func fizzbuzz(n int) string {
-	return "1"
+	return strconv.Itoa(n)
 }
