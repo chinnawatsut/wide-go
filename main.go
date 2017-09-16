@@ -25,10 +25,10 @@ func main() {
 			normal = normal + 1
 		}
 	}
-	fmt.Println("Normal : ", normal)
-	fmt.Println("Fizz : ", countFizz)
-	fmt.Println("Buzz : ", countBuzz)
-	fmt.Println("Fizzbuzz : ", countFizzBuzz)
+	fmt.Println("Normal : ", normal, "Percentage:", percentOf(normal, max), "%")
+	fmt.Println("Fizz : ", countFizz, "Percentage:", percentOf(countFizz, max), "%")
+	fmt.Println("Buzz : ", countBuzz, "Percentage:", percentOf(countBuzz, max), "%")
+	fmt.Println("Fizzbuzz : ", countFizzBuzz, "Percentage:", percentOf(countFizzBuzz, max), "%")
 
 }
 
@@ -56,4 +56,9 @@ func isFizz(n int) bool {
 
 func isBuzz(n int) bool {
 	return n%5 == 0
+}
+
+func percentOf(current int, all int) float64 {
+	percent := (float64(current) * float64(100)) / float64(all)
+	return percent
 }
