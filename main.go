@@ -14,7 +14,7 @@ func fizzbuzz(n int) string {
 		return "fizz"
 	}
 
-	if n == 5 {
+	if n%5 == 0 {
 		return "buzz"
 	}
 	return strconv.Itoa(n)
