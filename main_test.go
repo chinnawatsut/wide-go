@@ -1,17 +1,21 @@
 package main
 
 import "testing"
+import "strconv"
 
-func TestCase1(t *testing.T) {
-	result := fizzbuzz(1)
-	expecting := "1"
-
-	errorExpeted(result, expecting, t)
+func TestCaseWithoutFizz(t *testing.T) {
+	testSuit := []int{1, 2, 4}
+	for _, v := range testSuit {
+		expected := strconv.Itoa(v)
+		result := fizzbuzz(v)
+		if expected != result {
+			errorExpeted(result, expected, t)
+		}
+	}
 }
-
-func TestCase2(t *testing.T) {
-	result := fizzbuzz(2)
-	expecting := "2"
+func TestCase3(t *testing.T) {
+	result := fizzbuzz(3)
+	expecting := "fizz"
 	errorExpeted(result, expecting, t)
 }
 
