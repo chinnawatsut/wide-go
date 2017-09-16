@@ -13,15 +13,24 @@ func TestCaseWithoutFizz(t *testing.T) {
 		}
 	}
 }
-func TestCase3(t *testing.T) {
-	result := fizzbuzz(3)
-	expecting := "fizz"
-	errorExpeted(result, expecting, t)
+func TestCaseFizz(t *testing.T) {
+	testSuit := []int{3, 6}
+	for _, v := range testSuit {
+		expected := "fizz"
+		result := fizzbuzz(v)
+		if result != expected {
+			errorExpeted(result, expected, t)
+		}
+	}
+}
+
+func TestCase5(t *testing.T) {
+	errorExpeted(fizzbuzz(5), "buzz", t)
 }
 
 func errorExpeted(result, expeted string, t *testing.T) {
 	if result != expeted {
-		t.Error("result should be " + expeted + "but got " + result)
+		t.Error("result should be " + expeted + " but got " + result)
 
 	}
 }
