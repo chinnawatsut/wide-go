@@ -2,18 +2,11 @@ package main
 
 import "testing"
 
-func TestReverse(t *testing.T) {
-	cases := []struct {
-		in, want string
-	}{
-		{"Hello, world", "dlrow ,olleH"},
-		{"Hello, 世界", "界世 ,olleH"},
-		{"", ""},
-	}
-	for _, c := range cases {
-		got := Reverse(c.in)
-		if got != c.want {
-			t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
-		}
+func TestCase1(t *testing.T) {
+	result := fizzbuzz(1)
+	expecting := "1"
+
+	if result != expecting {
+		t.Error("result should be " + expecting + " but got " + result)
 	}
 }
