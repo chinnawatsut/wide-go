@@ -4,7 +4,7 @@ import "testing"
 import "strconv"
 
 func TestCaseWithNormal(t *testing.T) {
-	testSuit := []int{1, 2, 4, 8}
+	testSuit := []int{1, 2, 4, 8, 11, 13, 14}
 	for _, v := range testSuit {
 		expected := strconv.Itoa(v)
 		result := fizzbuzz(v)
@@ -13,7 +13,7 @@ func TestCaseWithNormal(t *testing.T) {
 	}
 }
 func TestCaseModBy3(t *testing.T) {
-	testSuit := []int{3, 6, 9}
+	testSuit := []int{3, 6, 9, 12}
 	for _, v := range testSuit {
 		expected := "fizz"
 		result := fizzbuzz(v)
@@ -24,7 +24,7 @@ func TestCaseModBy3(t *testing.T) {
 }
 
 func TestCaseModBy5(t *testing.T) {
-	testSuit := []int{5}
+	testSuit := []int{5, 10}
 	for _, v := range testSuit {
 		result := fizzbuzz(v)
 		expected := "buzz"
@@ -33,8 +33,8 @@ func TestCaseModBy5(t *testing.T) {
 	}
 }
 
-func TestCase5(t *testing.T) {
-	errorExpeted(fizzbuzz(5), "buzz", t)
+func TestCase15(t *testing.T) {
+	errorExpeted(fizzbuzz(15), "fizzbuzz", t)
 }
 
 func errorExpeted(result, expeted string, t *testing.T) {
