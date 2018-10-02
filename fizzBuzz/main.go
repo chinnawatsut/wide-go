@@ -11,8 +11,6 @@ func main() {
 	max := 1000
 	for i := 1; i < max; i++ {
 		result := fizzbuzz(i)
-		if result == "fizzbuzz" {
-		}
 
 		switch result {
 		case "fizzbuzz":
